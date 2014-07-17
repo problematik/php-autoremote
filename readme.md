@@ -14,7 +14,7 @@ To include PHP-AutoRemote in your project edit your project's `composer.json` fi
 
 PHP-AutoRemote is meant to be simple to use.
 To send an notification to your device all you need to do is the following:
-```
+```php
 <?php
 
 use Problematik\AutoRemote\AutoRemote;
@@ -30,11 +30,11 @@ Done, that's it! You should now see the notification on your device!
 You've send the notification and something went wrong? Then the `AutoRemoteException` will be thrown
 
 Don't want to chain methods together, you would rater pass an array of properties to the constructor? Thats fine to...
-```
+```php
 $notification = new AutoRemoteNotification(array("title" => "title", "text" => "text");
 ```
 But sometimes you just want to send an `AutoRemote message`, that can be done like so
-```
+```php
 <?php
 
 use Problematik\AutoRemote\AutoRemote;
@@ -48,7 +48,7 @@ $autoremote->send($notification);
 ```
 
 Want to add a button to your notification?
-```
+```php
 <?php
 
 use Problematik\AutoRemote\AutoRemote;
@@ -69,7 +69,7 @@ $autoremote->send($notification);
 ```
 We just added a button to a notification using the `AutoRemoteNotificationButton` class which takes in `message, label, icon` respectively.  
 For the icon we used the `AutoRemoteIcon` class, that has predefined constants with the icons you can use in your notifications, but you can use any string value as long it is listed in the AutoRemote Notification action in Tasker under the Button icon field, like so:
-```
+```php
 $button = new AutoRemoteNotificationButton("message to send on button click", "Click me", "action_help");
 ```
 > Please note that the `AutoRemoteIcon` class list only the icons which can be found in the `AutoRemoteNotification` apk under the `res/drawable-hdpi`, so some are missing (but that should still be enough, you have 350 icons predefined))
@@ -92,14 +92,14 @@ with the exception of
 
 ## Some more examples
 Send a notification with vibration pattern:
-```
+```php
 $notification = new AutoRemoteNotification();
 $notification->title("title")->text("text");
 
 $notification->vibrationPattern("100,200,100,200");
 ```
 Send a notification with led color:
-```
+```php
 $notification = new AutoRemoteNotification();
 $notification->title("title")->text("text");
 
@@ -107,11 +107,11 @@ $notification->ledColor("red");
 $notification->ledOnMS(200)->ledOffMS(200);
 ```
 or use the shorthand method
-```
+```php
 $notification->led("red", 200, 200);
 ```
 Send a notification with progress bar
-```
+```php
 $notification = new AutoRemoteNotification();
 $notification->title("title")->text("text");
 
