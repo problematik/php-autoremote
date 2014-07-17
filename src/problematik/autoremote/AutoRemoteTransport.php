@@ -59,7 +59,7 @@ abstract class AutoRemoteTransport {
 					if (array_key_exists($property, $differentNames)) {
 						$queryStringName = $differentNames[$property];
 					} else {
-						$queryStringName = $property;
+						$queryStringName = strtolower($property);
 					}
 
 					$data[] = $this->compilePropertyQueryString($property, $queryStringName);
