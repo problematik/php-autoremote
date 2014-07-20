@@ -7,7 +7,7 @@ PHP-AutoRemote is a PHP wrapper for [AutoRemote] [1]. It uses method chaning for
 To include PHP-AutoRemote in your project edit your project's `composer.json` file to require `problematik/php-autoremote`
 ```
 "require": {
-    "problematik\php-autoremote": "~1.0"
+    "problematik\php-autoremote": "~1.0.2"
 }
 ```
 ## Usage
